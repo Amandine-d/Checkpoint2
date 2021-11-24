@@ -1,0 +1,11 @@
+.game-img {
+  max-width: 50vw;
+  height: auto;
+  border-radius: 10px;
+}
+
+.container__game {
+  border: 1px solid black;
+  max-width: 55vw;
+  padding: 10px;
+}
