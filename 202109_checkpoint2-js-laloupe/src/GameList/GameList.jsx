@@ -1,6 +1,6 @@
 import React, { useState,useEffect }from "react";
 import axios from "axios";
-import Games from "../Game/Game";
+import Game from "../Game/Game";
 
 function GameList () {
   const [gameList, setGameList] = useState([]);
@@ -15,14 +15,16 @@ function GameList () {
   console.log(gameList);
   const [goodRating, setGoodRating] = useState(false);
   const handleRating = () => setGoodRating(!goodRating);
+  
+
   return (
-    <div>
-    <button onClick={handleRating} type='button'>Show me the best games</button>
+    <div classname="container__game__list">
+    <button onClick={handleRating} type='button' className="btn">Show me the best games</button>
     {gameList
     .filter((good) => (goodRating ? good.rating > 4.5 : good))
     .map((game) => {
       return(
-       <Games {...game} key={game.id}/>
+       <Game {...game} key={game.id}/>
       )
     })}
        
